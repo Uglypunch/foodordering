@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     padding: 10,
-    borderRadius: 50,  
+    borderRadius: 51,  
   },
   title: {
     fontSize: 30,
