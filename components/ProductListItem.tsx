@@ -1,16 +1,21 @@
 import { StyleSheet, Image } from 'react-native';
 import Colors from '@/constants/Colors';
-
 import { Text, View,} from '@/components/Themed';
+import { Product } from '@/assets/types';
 
+export const defaultPizzaImage = 
+'https://ih1.redbubble.net/image.2543658110.8249/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg';
 
-//const product = products[0];
+type ProductListItemProps = {
+  product: Product;
 
-const ProductListItem = ({ product }) => {
+}
+
+const ProductListItem = ({ product }: ProductListItemProps) => {
   //console.log(props);
   return (
     <View style={styles.container}>
-      <Image source={{uri: product.image}} style={styles.image}/>
+      <Image source={{uri: product.image || defaultPizzaImage }} style={styles.image}/>
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}>€ {product.price}</Text>
     </View>
