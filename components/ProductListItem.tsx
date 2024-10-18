@@ -15,7 +15,7 @@ type ProductListItemProps = {
 const ProductListItem = ({ product }: ProductListItemProps) => {
   //console.log(props);
   return (
-    <Link href={`/${product.id}`} asChild>
+    <Link href={`/menu/${product.id}`} asChild>
     <Pressable style={styles.container}>
       <Image source={{uri: product.image || defaultPizzaImage }} 
       style={styles.image}
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     flex: 1,  
     maxWidth: '50%',
+   // alignContent: 'center',
     //margin: 10,
    // flex: 0,
     //height: '20%'
