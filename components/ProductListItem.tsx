@@ -1,7 +1,8 @@
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
-import { Text, View,} from '@/components/Themed';
+import { Text, View} from '@/components/Themed';
 import { Product } from '@/assets/types';
+import { Link } from 'expo-router';
 
 export const defaultPizzaImage = 
 'https://ih1.redbubble.net/image.2543658110.8249/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg';
@@ -14,14 +15,17 @@ type ProductListItemProps = {
 const ProductListItem = ({ product }: ProductListItemProps) => {
   //console.log(props);
   return (
-    <View style={styles.container}>
+    <Link href={`/${product.id}`} asChild>
+    <Pressable style={styles.container}>
       <Image source={{uri: product.image || defaultPizzaImage }} 
       style={styles.image}
       resizeMode='contain'
       />
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}>€ {product.price}</Text>
-    </View>
+      
+    </Pressable>
+    </Link>
   );
 };
 
