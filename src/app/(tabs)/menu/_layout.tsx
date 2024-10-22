@@ -1,5 +1,5 @@
 import { Stack, Link } from "expo-router";
-import Colors from "@/src/constants/Colors";
+import Colors from "@/constants/Colors";
 import { Pressable} from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
