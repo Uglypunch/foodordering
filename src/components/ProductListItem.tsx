@@ -2,7 +2,7 @@ import { StyleSheet, Image, Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { Text, View} from '@/components/Themed';
 import { Product } from 'assets/types';
-import { Link } from 'expo-router';
+import { Link, useSegments } from 'expo-router';
 
 export const defaultPizzaImage = 
 'https://ih1.redbubble.net/image.2543658110.8249/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg';
@@ -14,8 +14,12 @@ type ProductListItemProps = {
 
 const ProductListItem = ({ product }: ProductListItemProps) => {
   //console.log(props);
+
+  const segments = useSegments();
+  console.log(`/${segments[0]}/menu/`);
+
   return (
-    <Link href={`/menu/${product.id}`} asChild>
+    <Link href={`/${segments[0]}/menu/${product.id}`} asChild>
     <Pressable style={styles.container}>
       <Image source={{uri: product.image || defaultPizzaImage }} 
       style={styles.image}
