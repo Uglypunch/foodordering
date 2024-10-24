@@ -3,6 +3,10 @@ import Colors from "@/constants/Colors";
 import { Pressable} from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
+
+//this menu is a stack, stack of pages on top of each other
+//i think that in here, we define that Menustack() is a stack where we have index at the top and [id] below it
+//and they are all under the menu folder, which kind of represents the stack.
 export default function MenuStack() {
     return (
     <Stack>
@@ -11,7 +15,7 @@ export default function MenuStack() {
           headerShown: true, 
           headerTitleAlign: 'center', 
           headerRight: () => (
-            <Link href="/" asChild>
+            <Link href="/(admin)/menu/create" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome

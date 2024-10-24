@@ -16,10 +16,9 @@ const ProductListItem = ({ product }: ProductListItemProps) => {
   //console.log(props);
 
   const segments = useSegments();
-  console.log(`/${segments[0]}/menu/`);
 
   return (
-    <Link href={`/${segments[0]}/menu/${product.id}`} asChild>
+    <Link href={`/menu/${product.id}`} asChild>
     <Pressable style={styles.container}>
       <Image source={{uri: product.image || defaultPizzaImage }} 
       style={styles.image}
