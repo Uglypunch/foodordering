@@ -1,8 +1,6 @@
 import { View, Text, StyleSheet, TextInput, Image, Alert } from 'react-native'
 import Button from '@/components/button';
 import { useState } from 'react';
-import { parse } from '@babel/core';
-import products from '@assets/data/products';
 import { defaultPizzaImage } from '@/components/ProductListItem';
 import * as ImagePicker from 'expo-image-picker';
 import { Stack, useLocalSearchParams } from 'expo-router';

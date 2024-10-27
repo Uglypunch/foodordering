@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, FlatList, Pressable } from 'react-native'
 import React from 'react'
 import { router, Stack, useLocalSearchParams, useRouter } from 'expo-router';
-import orders from '@assets/data/orders';
+import orders from 'assets/data/orders';
 import OrderItemListItem from '@/components/OrderItemListItem';
 import OrderListItem from '@/components/OrderListItem';
 
