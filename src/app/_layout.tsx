@@ -9,6 +9,7 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/components/useColorScheme';
 import CartProvider from '@/providers/CartProvider';
 import { ScreenStackHeaderCenterView } from 'react-native-screens';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -51,16 +52,18 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
+    <SafeAreaView style={{ flex: 1 }}>
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <CartProvider>
         <Stack>
           {/* these are just used to hide headers, not related to bars at the bottom */}
           <Stack.Screen name="(admin)" options={{ headerShown: false }} />
           <Stack.Screen name="(user)" options={{ headerShown: false }} />
+          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           <Stack.Screen name="cart" options={{ presentation: 'modal', animation: 'slide_from_bottom', }} />
         </Stack>
       </CartProvider>
     </ThemeProvider>
-    
+    </SafeAreaView>
   );
 }

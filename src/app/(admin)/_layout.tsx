@@ -14,6 +14,10 @@ function TabBarIcon(props: {
   return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
 }
 
+
+//Here we are defining that this page should have a tab layout at the bottom of the page.
+//if we dont use tab layout then everything under here would be unnecessary
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
@@ -30,6 +34,7 @@ export default function TabLayout() {
       }}>
 
       <Tabs.Screen name = "index" options ={{href: null}}/>
+      
   
       <Tabs.Screen
         name="menu"
@@ -43,7 +48,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="order-history"
         options={{
           title: 'Orders',
           tabBarIcon: ({ color }) => (

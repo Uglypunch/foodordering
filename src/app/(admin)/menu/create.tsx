@@ -139,7 +139,7 @@ const confirmDelete = () => {
       onChangeText={setPrice}
       />
 
-      <Text style={{color: 'red'}}>{errors}</Text>
+      <Text style={{color: 'red'}}>{[errors]}</Text>
 
 
 
